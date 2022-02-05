@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+      <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+
+  <title> Gateways 2022 </title>
+
+  <!-- bootstrap core css -->
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="cat02.css" />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/bc4d8abcd3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="cat02.js"></script>
+  </head>
+  <body>
+    <div class="samcontainer">
+
+      <h2 style="text-align:center"> CHRIST (Deemed to be University) </h2>
+      <h3 style="text-align:center"> Department of Computer Science Presents Online IT Fest </h3>
+      <h4 style="text-align:center"> -TECHNOVID REGISTRATION FORM </h4>
+      <form  onsubmit = "validateForm(event)"class="form" id="form">
+        <div class="form-control">
+          <label for="firstname">Name</label>
+          <input
+            type="text"
+            id="firstname"
+            placeholder="eg:Damon"
+            onkeypress="return onlyChar (event)"
+            onkeyup=" checkName('firstname')"
+            autocomplete="off"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div>
+
+        <div class="form-control">
+          <label for="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            placeholder="email ID"
+            onkeyup="checkEmail()"
+            autocomplete="off"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div> 
+
+        <div class="form-control">
+          <label for="branch">Branch</label>
+          <input
+            type="text"
+            id="branch"
+            placeholder="eg:Main campus"
+            onkeypress="return onlyChar (event)"
+            onkeyup=" checkbranch('branch')"
+            autocomplete="off"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div>
+
+        <div class="form-control">
+          <label for="college">College/University name</label>
+          <input
+            type="text"
+            id="college"
+            placeholder="eg:Christ University"
+            onkeypress="return onlyChar (event)"
+            onkeyup=" checkcollege('college')"
+            autocomplete="off"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div>
+
+        <div class="form-control">
+          <label for="statename">State</label>
+          <input
+            type="text"
+            id="statename"
+            placeholder="eg:Karnataka"
+            onkeypress="return onlyChar (event)"
+            onkeyup=" checkStateName('statename')"
+            autocomplete="off"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div>
+
+        <div class="form-control">
+          <label for="address">Address</label>
+          <input
+            type="text"
+            id="address"
+            placeholder="eg:Sri Nilaya Bldg,Kolkata"
+            onkeypress="return onlyChar (event)"
+            onkeyup=" checkaddress('address')"
+            autocomplete="off"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div>
+
+        <div class="form-control">
+          <label for="age">Age</label>
+          <input
+            type="text"
+            id="age"
+            placeholder="23"
+            onkeypress="return onlyDigits (event)"
+            onkeyup="checkage()"
+            autocomplete="off"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div>
+
+        <div class="form-control">
+          <label for="phoneno">Phone No</label>
+          <input
+            type="text"
+            id="phoneno"
+            placeholder="0123456789"
+            onkeypress="return onlyDigits (event)"
+            onkeyup="checkPhoneNo()"
+            autocomplete="off"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div>
+
+        <div class="form-control">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            placeholder="damonSal22"
+            onkeyup="checkUserName ()"
+            autocomplete="off"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div>
+
+        <div class="form-control">
+          <label for="password">Password</label>
+          <input
+            type="text"
+            id="password"
+            placeholder="password"
+            onkeyup="checkPassword()"
+            autocomplete="off"
+          />
+
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div>
+
+        <div class="form-control">
+          <label for="password2">Confirm Password</label>
+          <input
+            type="password"
+            id="password2"
+            placeholder="re-enter your password"
+            onkeyup="confirmPassword()"
+            autocomplete="off"
+          />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error</small>
+        </div>
+
+        
+
+        <button type = 'submit' >Submit</button>
+      </form>
+    </div>
+    
+  </body>
+</html>
