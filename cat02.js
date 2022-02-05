@@ -3,6 +3,11 @@ let emtxt;
 let password;
 let password2;
 let phoneno;
+let age;
+let address;
+let branch;
+let university;
+
 
  onlyChar=(event)=> {
   let input = event.which;
@@ -12,24 +17,23 @@ let phoneno;
 
 onlyDigits = (event) => {
   let input = event.which;
-  if (input > 47 && input < 58) return true;
+  if (input > 18 && input < 58) return true;
   else return false;
 };
 
 validateForm = (event) => {
   event.preventDefault();
   checkName("firstname");
-  checkEmail();
-  checkbranch("branch");
-  checkcollege("college");
-  checkStateName("statename");
-  checkaddress("address");
-  checkage();
-  checkPhoneNo();
+  checkName("lastname");
   checkUserName();
+  checkEmail();
   checkPassword();
   confirmPassword();
-  
+  checkPhoneNo();
+  checkage();
+  checkaddress();
+  checkbranch();
+  checkuniversity();
 };
 
 checkName = (id) => {
@@ -46,77 +50,6 @@ checkName = (id) => {
   }
 };
 
-checkbranch = (id) => {
-    const branch = document.getElementById(id);
-    //console.log(id)
-    const branchVal = branch.value.trim();
-    if (branchVal === "") {
-      //console.log(branchVal)
-      return error(branch, "cannot be empty");
-    } else if (id === "branch" && branchVal.length < 3) {
-      return error(branch, " cannot be less than three");
-    } else {
-      return success(branch);
-    }
-  };
-
-
-  checkcollege = (id) => {
-    const college = document.getElementById(id);
-    //console.log(id)
-    const collegeVal = college.value.trim();
-    if (collegeVal === "") {
-      //console.log(branchVal)
-      return error(college, "cannot be empty");
-    } else if (id === "college" && collegeVal.length < 3) {
-      return error(college, " cannot be less than three");
-    } else {
-      return success(college);
-    }
-  };
-
-  checkStateName = (id) => {
-    const Statename = document.getElementById(id);
-    //console.log(id)
-    const StatenameVal = Statename.value.trim();
-    if (StatenameVal === "") {
-      //console.log(StatenameVal)
-      return error(state, "cannot be empty");
-    } else if (id === "state" && StatenameVal.length < 3) {
-      return error(state, " cannot be less than three");
-    } else {
-      return success(state);
-    }
-  };
-
-  checkaddress = (id) => {
-    const address = document.getElementById(id);
-    //console.log(id)
-    const addressVal = address.value.trim();
-    if (addressVal === "") {
-      //console.log(addressVal)
-      return error(address, "cannot be empty");
-    } else if (id === "address" && addressVal.length < 3) {
-      return error(address, " cannot be less than three");
-    } else {
-      return success(address);
-    }
-  };
-
-  checkage = () => {
-    const age = document.getElementById("id");
-    const ageVal = age.value.trim();
-    const phoneRegex = /[1-9]{2}/;
-  
-    if (ageRegex.test(ageVal) && ageVal.length === 2) {
-      return success(age);
-    } else {
-      return error(age, "should contain only 2 digits");
-    }
-  };
-  
- 
-
 checkUserName = () => {
   userName = document.getElementById("username");
   const userNameVal = userName.value.trim();
@@ -131,16 +64,64 @@ checkUserName = () => {
 };
 
 
+checkbranch = () => {
+    branch = document.getElementById("branch");
+    const branchVal = branch.value.trim();
+  
+    if (branchVal === "") {
+      return error(branch, "Branch cannot be empty \n");
+    } else {
+      return success(branch);
+    }
+  };
+
+checkuniversity= () => {
+    university = document.getElementById("university");
+    const universityVal = university.value.trim();
+  
+    if (universityVal === "") {
+      return error(university, "University cannot be empty \n");
+    } else {
+      return success(university);
+    }
+  };
+
+checkage = () => {
+    age = document.getElementById("age");
+    const ageVal = age.value.trim();
+  
+    if (ageVal === "") {
+      return error(age, "Age cannot be empty \n");
+    } else if (ageVal.length < 2) {
+      return error(age, "Enter correct age\n");
+    } else {
+      return success(age);
+    }
+  };
+  
+checkaddress = () => {
+    address = document.getElementById("address");
+    const addressVal = address.value.trim();
+  
+    if (addressVal === "") {
+      return error(address, "address cannot be empty \n");
+    } else {
+      return success(address);
+    }
+  };
+
+
 checkEmail = () => {
   email = document.getElementById('email');
   let emailval = email.value.trim();
-  const emailregx = /([a-z0-9\.\-_]{5,25})@christuniversity.in$/;
+  const emailregx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  //const emailregx = /([a-z0-9\.\-_]{5,25})@christuniversity.in$/;
   if(emailregx.test(emailval))
   {
     return success(email);
   }
   else {
-    return error(email, "aneeta.m@mca.christuniversity.in, aneeta@christuniversity.in ");
+    return error(email, "sinchana.s@mca.christuniversity.in, sinchana@christuniversity.in ");
   }
 }
 
@@ -188,8 +169,6 @@ confirmPassword = () => {
     return success(password2);
   }
 };
-
-
 checkPhoneNo = () => {
   phoneNo = document.getElementById("phoneno");
   const phoneNoVal = phoneNo.value.trim();
@@ -207,9 +186,6 @@ success = (input) => {
 
   formControl.className = "form-control success";
 };
-
-
-
 
 error = (input, message) => {
   const formControl = input.parentElement;
